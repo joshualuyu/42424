@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum=1.0,minimum=1.0">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      width: 300px;
+      height: 300px;
+      background: #f00;
+      margin: 0  auto;
+    }
+    #content{
+      border: 3px solid #0f0;
+    }
+    li  button{
+      display: none;
+    }
+    li{
+      list-style: none;
+      height: 30px;
+      line-height: 30px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <ul>
+      <li>123213213 <button>删除</button></li>
+      <li>21321321 <button>删除</button></li>
+      <li>23213213 <button>删除</button></li>
+      <li>12321312 <button>删除</button></li>
+      <li>12321321312 <button>删除</button></li>
+    </ul>
+  </div>
+  <button>按钮</button>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/touch.js"></script>
+  <script>
+    $(".box").click(function(){
+      $(this).css({
+        background:"#00f"
+      }).attr("id","content")
+    })
+    $("button").click(function(){
+      $(".box").removeAttr("id");
+    })
+    
+    $("li").swipeLeft(function () {
+      console.log("1111111")
+      $(this).children("button").css({
+        display:"inline-block"
+      })
+    })
+    $("li").swipeRight(function () {
+      $(this).children("button").css({
+        display:"none"
+      })
+    })
+  </script>
+</body>
+</html>

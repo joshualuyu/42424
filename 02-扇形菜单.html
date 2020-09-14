@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum=1.0,minimum=1.0">
+  <title>Title</title>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/touch.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="content">
+    <div class="item">
+      <img src="./img/menu.png" alt="">
+    </div>
+    <div class="menu-box">
+      <div class="menu-item"></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu-item"></div>
+    </div>
+    <div class="menu-box">
+      <div class="menu-item"></div>
+    </div>
+<!--    <div class="menu-box">-->
+<!--      <div class="menu-item"></div>-->
+<!--    </div>-->
+  </div>
+
+
+<script>
+  var boo = true;
+  $(".item").longTap(function () {
+    if(boo){
+      $(".menu-box:nth-of-type(2)").css({
+        animation:"item1 1s ease 1 forwards"
+      })
+      $(".menu-box:nth-of-type(3)").css({
+        animation:"item2 1s ease 1 forwards"
+      })
+      $(".menu-box:nth-of-type(4)").css({
+        animation:"item3 1s ease 1 forwards"
+      })
+      boo = false;
+    }else{
+      $(".menu-box:nth-of-type(2)").css({
+        animation:"item4 1s ease 1 forwards"
+      })
+      $(".menu-box:nth-of-type(3)").css({
+        animation:"item5 1s ease 1 forwards"
+      })
+      $(".menu-box:nth-of-type(4)").css({
+        animation:"item6 1s ease 1 forwards"
+      })
+      boo = true;
+    }
+
+
+  })
+</script>
+</body>
+</html>
